@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.table-container {
+    @apply justify-center mx-auto my-20 max-w-6xl max-h-96 shadow-md sm:rounded-lg overflow-y-auto
+}
