@@ -1,7 +1,7 @@
 'use server'
 import axios from 'axios';
 
-const BACKEND_URL = 'http://localhost:3001/'
+const BACKEND_URL = 'https://situ-backend.onrender.com/'
 
 type Profession = {
     id?: number,
