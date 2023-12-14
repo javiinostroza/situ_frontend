@@ -7,20 +7,20 @@ export default function RootLayout({
 }) {
     return (
         <div>
-            <nav className="flex flex-row items-center sm:text-left justify-between bg-[#0B7EE3] py-4 px-6">
+            <nav className="logged-nav">
                 <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                     <div className="text-xl lg:flex-grow">
-                        <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8">
+                        <Link href="/" className="nav-item">
                             Inicio
                         </Link>
-                        <Link href="/admin/patients" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8">
+                        <Link href="/admin/patients" className="nav-item">
                             Pacientes
                         </Link>
-                        <Link href="/admin/professionals" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8">
+                        <Link href="/admin/professionals" className="nav-item">
                             Profesionales
                         </Link>
                         
-                        <Link href="/admin/professions" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8">
+                        <Link href="/admin/professions" className="nav-item">
                             Profesiones
                         </Link>
                     </div>

@@ -9,21 +9,21 @@ export default function Home() {
       <div className="mb-10 text-xl font-medium text-gray-900">SITU</div>
       <div className="mb-10">
         <button 
-          className="w-full bg-[#0B7EE3] hover:bg-[#36658E] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center"
+          className="full-btn bg-[#0B7EE3] hover:bg-[#36658E]"
         >
           <Link href={'/patient'}>Ingresar como Paciente</Link>
         </button>
       </div>
       <div className="mb-10">
         <button 
-          className="w-full bg-[#0B7EE3] hover:bg-[#36658E] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center"
+          className="full-btn bg-[#0B7EE3] hover:bg-[#36658E]"
         >
           <Link href={'/professional'}>Ingresar como Profesional</Link>
         </button>
       </div>
       <div className="mb-10">
         <button 
-          className="w-full bg-[#0B7EE3] hover:bg-[#36658E] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center"
+          className="full-btn bg-[#0B7EE3] hover:bg-[#36658E]"
         >
           <Link href={'/admin/patients'}>Ingresar como Administrador</Link>
         </button>

@@ -39,12 +39,12 @@ export default function Patients() {
 
     return (
         <>
-            <div className="justify-center items-center mx-auto my-20 max-w-sm">
-                <p className="text-center text-xl">Pacientes</p>
+            <div className="title-container">
+                <p className="title">Pacientes</p>
             </div>
             <div className="table-container">
-                <table className="w-full text-sm text-left text-gray-500">
-                    <thead className="text-m text-gray-700 uppercase bg-gray-50">
+                <table className="full-table">
+                    <thead className="head-table">
                         <tr>
                             <th scope="col" className="px-6 py-3">
                                 Id Paciente
@@ -67,7 +67,7 @@ export default function Patients() {
                                 </td>
                                 <td>
                                     <button 
-                                        className="text-white bg-[#E3150B] p-1 px-2 my-6 rounded-2xl"
+                                        className="delete-btn"
                                         onClick={() => handleDelete(patient.id)}
                                     >
                                         Eliminar
@@ -80,29 +80,25 @@ export default function Patients() {
             </div>
             <div className="justify-center mx-auto w-60">
                 <button 
-                    className="w-full bg-[#0B7EE3] hover:bg-[#36658E] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center"
-                    onClick={ () => setModal(!modal) }
+                    className="full-btn bg-[#0B7EE3] hover:bg-[#36658E]"
+                    onClick={() => setModal(!modal)}
                 >
                     Agregar Paciente
                 </button>
             </div>
             {modal ? (
                 <>
-                <div
-                    className="justify-center items-center flex fixed inset-0 mx-auto z-50 outline-none max-w-6xl rounded-lg"
-                >
-                    <div className="relative my-6 mx-auto w-full max-w-sm p-4 m-auto bg-white border  rounded-lg shadow sm:p-6 md:p-8">
-                        <div className="flex flex-col items-center justify-between p-5 border-slate-200 rounded-t">
-                            <div className="mb-20 text-xl font-medium text-gray-900">
-                                {'Agregar Paciente'}
-                            </div>
-                            <form className="space-y-4 md:space-y-6" onSubmit={(e) => savePatient(e)}>
+                <div className="modal-container">
+                    <div className="modal-box">
+                        <div className="flex-modal">
+                            <div className="mb-20 modal-title">{ 'Agregar Paciente' }</div>
+                            <form className="modal-content" onSubmit={(e) => savePatient(e)}>
                                 <div>
-                                    <label className="block my-2 text-m font-medium">RUT Paciente</label>
+                                    <label className="form-label">RUT Paciente</label>
                                     <input 
                                         type="text" 
                                         onChange={(e) => setRut(e.target.value)}
-                                        className="border border-gray-300 sm:text-sm rounded-lg block w-full p-2.5 mb-20" 
+                                        className="form-input mb-20" 
                                         placeholder="12345678-9" 
                                         required 
                                     />
@@ -110,12 +106,12 @@ export default function Patients() {
                                 <div className="flex flex-row">
                                     <button 
                                         type="submit"
-                                        className="w-full bg-[#0B7EE3] hover:bg-[#36658E] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center mr-1"
+                                        className="full-btn bg-[#0B7EE3] hover:bg-[#36658E] mr-1"
                                     >
                                         Agregar
                                     </button>
                                     <button 
-                                        className="w-full bg-[#E3150B] hover:bg-[#d46862] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center ml-1"
+                                        className="full-btn bg-[#E3150B] hover:bg-[#d46862] ml-1"
                                         onClick={() => setModal(false)}
                                     >
                                         Cancelar
@@ -125,7 +121,7 @@ export default function Patients() {
                         </div>
                     </div>
                 </div>
-                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                <div className="modal-opacity"></div>
             </>
             ) : null}
             

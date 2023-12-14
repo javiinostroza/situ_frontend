@@ -113,14 +113,12 @@ export async function CreateSchedule(
     endHour: number, 
     idProfessional: number
 ) {
-    console.log('selected date: ', date)
     const response = await axios.post(BACKEND_URL + 'schedule', {
         date: date,
         startHour: startHour,
         endHour: endHour,
         professional: idProfessional 
     });
-    console.log("respo : ", response.data)
     return response.data;
 }
 

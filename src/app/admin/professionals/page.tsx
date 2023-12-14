@@ -60,12 +60,12 @@ export default function Professionals() {
 
     return (
         <>
-            <div className="justify-center items-center mx-auto my-20 max-w-sm">
-                <p className="text-center text-xl">Profesionales</p>
+            <div className="title-container">
+                <p className="title">Profesionales</p>
             </div>
             <div className="table-container">
-                <table className="w-full text-sm text-left text-gray-500">
-                    <thead className="text-m text-gray-700 uppercase bg-gray-50">
+                <table className="full-table">
+                    <thead className="head-table">
                         <tr>
                             <th scope="col" className="px-6 py-3">
                                 Id Profesional
@@ -100,7 +100,7 @@ export default function Professionals() {
                                 </td>
                                 <td>
                                     <button 
-                                        className="text-white bg-[#E3150B] p-1 px-2 my-6 rounded-2xl"
+                                        className="delete-btn"
                                         onClick={() => handleDelete(professional.id)}
                                     >
                                         Eliminar
@@ -113,7 +113,7 @@ export default function Professionals() {
             </div>
             <div className="justify-center mx-auto w-60">
                 <button 
-                    className="w-full bg-[#0B7EE3] hover:bg-[#36658E] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center"
+                    className="full-btn bg-[#0B7EE3] hover:bg-[#36658E]"
                     onClick={ () => setModal(!modal) }
                 >
                     Agregar Profesional
@@ -122,56 +122,54 @@ export default function Professionals() {
             {modal ? (
                 <>
                 <div
-                    className="justify-center items-center flex fixed inset-0 mx-auto z-50 outline-none max-w-6xl rounded-lg"
+                    className="modal-container"
                 >
-                    <div className="relative my-6 mx-auto w-full max-w-sm p-4 m-auto bg-white border  rounded-lg shadow sm:p-6 md:p-8">
-                        <div className="flex flex-col items-center justify-between p-5 border-slate-200 rounded-t">
-                            <div className="mb-10 text-xl font-medium text-gray-900">
-                                {'Agregar Profesional'}
-                            </div>
-                            <form className="space-y-4 md:space-y-6" onSubmit={(e) => saveProfessional(e)}>
+                    <div className="modal-box">
+                        <div className="flex-modal">
+                            <div className="mb-10 modal-title">{ 'Agregar Profesional' }</div>
+                            <form className="modal-content" onSubmit={(e) => saveProfessional(e)}>
                                 <div>
-                                    <label className="block my-2 text-m font-medium">Nombre</label>
+                                    <label className="form-label">Nombre</label>
                                     <input 
                                         type="text" 
                                         onChange={(e) => setName(e.target.value)}
-                                        className="border border-gray-300 sm:text-sm rounded-lg block w-full p-2.5" 
-                                        placeholder="Juan Pérez" 
+                                        className="form-input" 
+                                        placeholder="Juan García" 
                                         required 
                                     />
                                 </div>
                                 <div>
-                                    <label className="block my-2 text-m font-medium">Email</label>
+                                    <label className="form-label">Email</label>
                                     <input 
                                         type="email" 
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="border border-gray-300 sm:text-sm rounded-lg block w-full p-2.5" 
-                                        placeholder="juanperez@email.com" 
+                                        className="form-input" 
+                                        placeholder="juangarcia@email.com" 
                                         required 
                                     />
                                 </div>
                                 <div>
-                                    <label className="block my-2 text-m font-medium">Profesión</label>
+                                    <label className="form-label">Profesión</label>
                                     <select 
-                                        className="border border-gray-300 sm:text-sm rounded-lg block w-full p-2.5 mb-20"
+                                        className="form-input mb-20"
                                         onChange={(e) => loadProfession(e.target.value)}
                                         required
                                     >
                                         <option value="">Seleccione Profesión</option> 
                                         {professions.map((profession: Profession) => (
-                                            <option key={profession.id} value={profession.id}>{ profession.name }</option>
+                                            <option key={ profession.id } value={ profession.id }>{ profession.name }</option>
                                         ))}
                                     </select>
                                 </div>
                                 <div className="flex flex-row">
                                     <button 
                                         type="submit"
-                                        className="w-full bg-[#0B7EE3] hover:bg-[#36658E] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center mr-1"
+                                        className="full-btn bg-[#0B7EE3] hover:bg-[#36658E] mr-1"
                                     >
                                         Agregar
                                     </button>
                                     <button 
-                                        className="w-full bg-[#E3150B] hover:bg-[#d46862] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center ml-1"
+                                        className="full-btn bg-[#E3150B] hover:bg-[#d46862] ml-1"
                                         onClick={() => setModal(false)}
                                     >
                                         Cancelar
@@ -181,10 +179,9 @@ export default function Professionals() {
                         </div>
                     </div>
                 </div>
-                <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                <div className="modal-opacity"></div>
             </>
             ) : null}
-            
         </>
     )
 };

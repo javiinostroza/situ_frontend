@@ -5,3 +5,67 @@
 .table-container {
     @apply justify-center mx-auto my-20 max-w-6xl max-h-96 shadow-md sm:rounded-lg overflow-y-auto
 }
+
+.full-table {
+    @apply w-full text-sm text-left text-gray-500
+}
+
+.head-table {
+    @apply text-base text-gray-700 uppercase bg-gray-50
+}
+
+.logged-nav {
+    @apply flex flex-row items-center sm:text-left justify-between bg-[#0B7EE3] py-4 px-6
+}
+
+.nav-item {
+    @apply block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8
+}
+
+.full-btn {
+    @apply w-full text-white font-medium rounded-lg text-lg px-5 py-2.5 text-center
+}
+
+.delete-btn {
+    @apply text-white bg-[#E3150B] p-1 px-2 my-6 rounded-2xl
+}
+
+.modal-container {
+    @apply justify-center items-center flex fixed inset-0 mx-auto z-50 outline-none max-w-6xl rounded-lg
+}
+
+.modal-box {
+    @apply relative my-6 mx-auto w-full max-w-sm p-4 m-auto bg-white border  rounded-lg shadow sm:p-6 md:p-8
+}
+
+.flex-modal {
+    @apply flex flex-col items-center justify-between p-5 border-slate-200 rounded-t
+}
+
+.modal-title {
+    @apply text-xl font-medium text-gray-900
+}
+
+.modal-content {
+    @apply space-y-4 md:space-y-6
+}
+
+.modal-opacity {
+    @apply opacity-25 fixed inset-0 z-40 bg-black
+}
+
+.form-label {
+    @apply block my-2 text-base font-medium
+}
+
+.form-input {
+    @apply border border-gray-300 sm:text-sm rounded-lg block w-full p-2.5
+}
+
+.title-container {
+    @apply justify-center items-center mx-auto my-20 max-w-sm
+}
+
+.title {
+    @apply text-center text-xl
+}
