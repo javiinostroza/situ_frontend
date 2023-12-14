@@ -13,16 +13,6 @@ export default function RootLayout({
                         <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8">
                             Inicio
                         </Link>
-                        <Link href="/admin/patients" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8">
-                            Pacientes
-                        </Link>
-                        <Link href="/admin/professionals" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8">
-                            Profesionales
-                        </Link>
-                        
-                        <Link href="/admin/professions" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:font-medium mr-8">
-                            Profesiones
-                        </Link>
                     </div>
                 </div>
             </nav>

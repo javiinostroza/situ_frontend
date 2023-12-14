@@ -104,3 +104,44 @@ export async function DeleteAPatient(patientId: number) {
     const response = await axios.delete(BACKEND_URL + 'patient/' + patientId.toString());
     return response.data;
 }
+
+// Schedules
+
+export async function CreateSchedule(
+    date: Date | string, 
+    startHour: number, 
+    endHour: number, 
+    idProfessional: number
+) {
+    console.log('selected date: ', date)
+    const response = await axios.post(BACKEND_URL + 'schedule', {
+        date: date,
+        startHour: startHour,
+        endHour: endHour,
+        professional: idProfessional 
+    });
+    console.log("respo : ", response.data)
+    return response.data;
+}
+
+export async function GetAllSchedules() {
+    const response = await axios.get(BACKEND_URL + 'schedule');
+    return response.data;
+}
+
+export async function GetASchedule(scheduleId: number) {
+    const response = await axios.get(BACKEND_URL + 'schedule/' + scheduleId.toString());
+    return response.data;
+}
+
+export async function DeleteASchedule(scheduleId: number) {
+    const response = await axios.delete(BACKEND_URL + 'schedule/' + scheduleId.toString());
+    return response.data;
+}
+
+export async function ReserveASchedule(scheduleId: number) {
+    const response = await axios.put(BACKEND_URL + 'schedule/' + scheduleId.toString(), {
+        available: false,
+    });
+    return response.data;
+}

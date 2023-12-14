@@ -25,7 +25,7 @@ export default function Home() {
         <button 
           className="w-full bg-[#0B7EE3] hover:bg-[#36658E] text-white font-medium rounded-lg text-l px-5 py-2.5 text-center"
         >
-          <Link href={'/admin'}>Ingresar como Administrador</Link>
+          <Link href={'/admin/patients'}>Ingresar como Administrador</Link>
         </button>
       </div>
   </div>

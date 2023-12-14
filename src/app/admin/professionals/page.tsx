@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, FormEvent } from "react"
-import { GetAllProfessionals, GetAllProfessions, CreateProfessional, DeleteAProfessional } from "@/app/api/apiClient"
+import { GetAllProfessions, CreateProfessional, DeleteAProfessional } from "@/app/api/apiClient"
 
 type Professional = {
     id: number,
